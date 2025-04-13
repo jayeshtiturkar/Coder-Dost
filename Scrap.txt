@@ -15,8 +15,12 @@
 
         ,
         {
+            "src": "/products/",
+            "dest": "index.js"
+        },
+        {
             "src": "/products/(.*)",
-            "dest": "server.js"
+            "dest": "index.js"
         },
         {
             "src": "/",
