@@ -11,7 +11,7 @@ export default function PostForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post(`${baseURL}/products/`,formData)
+    const res = await axios.post(`/products`,formData)
     console.log(res.data);
   };
 

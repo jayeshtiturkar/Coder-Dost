@@ -6,14 +6,14 @@ export default function Home() {
   const [products, setproducts] = useState([]);
 
   const getProducts = async () => {
-    const res = await axios.get(`${baseURL}/products/`)
+    const res = await axios.get(`/products`)
     console.log(baseURL);
     setproducts(res.data)
     console.log(res.data);
   }
 
   const deleteProduct = async(id) => {
-    const res = await axios.delete(`${baseURL}/products/${id}`)
+    const res = await axios.delete(`/products/${id}`)
     console.log(res.data);
     setproducts(products.filter(p=>p._id !== id))
   }
