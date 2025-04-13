@@ -30,3 +30,14 @@
             "src": "/(.+)",
             "dest": "dist/$1"
         }
+
+
+        {
+            "src": "/products(?:/.*)?",
+            "dest": "/index.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/dist/index.html"
+          }
+    
