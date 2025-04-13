@@ -25,7 +25,7 @@
     res.sendFile(path.resolve(__dirname, "dist", "index.html"));
   });
   // Start the server on port 2000 or the value from the environment variable
-  server.listen(2000)
+  server.listen(8080)
   main().catch(err => console.log("Not Connecting...",err));
 
   // Connect to MongoDB database
