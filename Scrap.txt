@@ -10,3 +10,19 @@
 
     
         value={formData.thumbnail}
+
+
+
+        ,
+        {
+            "src": "/products/(.*)",
+            "dest": "server.js"
+        },
+        {
+            "src": "/",
+            "dest": "dist/index.html"
+        },
+        {
+            "src": "/(.+)",
+            "dest": "dist/$1"
+        }
