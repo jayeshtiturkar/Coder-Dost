@@ -21,11 +21,11 @@
   server.use("/products", productRouter)
 
   // Catch-all route for single-page applications (SPA) like React
-  server.use("/*splat", (req, res) => {
+  server.use('/{*splat}', (req, res) => {
     res.sendFile(path.resolve(__dirname, "dist", "index.html"));
   });
   // Start the server on port 2000 or the value from the environment variable
-  server.listen(8080)
+  server.listen(5000)
   main().catch(err => console.log("Not Connecting...",err));
 
   // Connect to MongoDB database
