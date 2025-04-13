@@ -4,7 +4,6 @@ const productController = require('../controller/Product')
 const router = express.Router()
 // REST API
 
-
 router.get("/",productController.getALLProduct)
 router.get("/:id",productController.getProduct)
 router.post("/", productController.postProduct)
