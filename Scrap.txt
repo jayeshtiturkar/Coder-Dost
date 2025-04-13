@@ -1,0 +1,12 @@
+
+    title: "",
+    description: "",
+    price: "",
+    quantity:"",
+    discountPercentage:"",
+    thumbnail:"",
+    total:""
+
+
+    
+        value={formData.thumbnail}
