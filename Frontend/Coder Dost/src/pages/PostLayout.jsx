@@ -14,7 +14,7 @@ const PostLayout = ({_id,thumbnail,title,price,quantity,description,deleteProduc
                             <button className='pl-2'onClick={()=>deleteProduct(_id)}>Delete</button>
                         </a>
                         <span className="text-gray-500 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-800">
-                            <h1 className='title-font text-lg font-medium text-white '>{price}</h1>
+                            <h1 className='title-font text-lg font-medium text-white '>Price : {price}</h1>
                         </span>
                         <span className="text-gray-500 inline-flex items-center leading-none text-sm">
                             <h2>Quantity : {quantity}</h2>

@@ -6,8 +6,23 @@ const Product = Jayesh.ProuctSchema
 
 
 exports.getALLProduct = async (req, res) => {
-    const products = await Product.find()
-    res.json(products)
+    if (req.query.value && req.query.sort) {
+        const query = Product.find()
+        const v1 = req.query.value
+        const products = await query.sort({ [v1]: req.query.sort }).exec();
+        res.json(products)
+
+    } else if (req.query.page) {
+        const query = Product.find()
+        const numberOfProduct = 4
+        const pageNumber = req.query.page
+        const products = await query.skip(numberOfProduct*(pageNumber-1)).limit(numberOfProduct).exec();
+        res.json(products)
+
+    } else {
+        const products = await Product.find()
+        res.json(products)
+    }
 }
 
 exports.getProduct = async (req, res) => {
@@ -57,9 +72,9 @@ exports.updateProduct = async (req, res) => {
         console.log(error);
         res.json(error)
     }
-    
+
 }
-exports.deleteProduct = async(req, res) => {
+exports.deleteProduct = async (req, res) => {
     const id = req.params.id
     try {
         const products = await Product.findByIdAndDelete({ _id: id })
